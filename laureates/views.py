@@ -43,7 +43,6 @@ def question(request, question_num):
     return render(request, 'laureates/question.html', context)
 
 def result(request):
-    # Получаем ответы из сессии
     answers = {
         'q1_answer': request.session.get('q1'),
         'q2_answer': request.session.get('q2'),
@@ -51,7 +50,6 @@ def result(request):
         'q4_answer': request.session.get('q4'),
     }
     
-    # Ищем подходящего лауреата
     laureates = Laureate.objects.filter(
         q1_answer=answers['q1_answer'],
         q2_answer=answers['q2_answer'],
