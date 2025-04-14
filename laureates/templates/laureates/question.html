@@ -1,0 +1,19 @@
+{% extends "laureates/base.html" %}
+
+{% block content %}
+    <h2>Вопрос {{ question_num }} из 4</h2>
+    <p>{{ question }}</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <div class="options">
+            {% for option in options %}
+                <button type="submit" name="answer" value="{{ option }}" class="option-btn">
+                    {{ option }}
+                </button>
+            {% endfor %}
+        </div>
+    </form>
+    
+    <p>Прогресс: {{ question_num }}/4</p>
+{% endblock %}

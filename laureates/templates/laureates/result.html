@@ -1,0 +1,15 @@
+{% extends "laureates/base.html" %}
+
+{% block content %}
+    {% if laureate %}
+        <h1>Результат</h1>
+        <p>Мы думаем, что вы загадали:</p>
+        <h2>{{ laureate.name }}</h2>
+        <p><strong>Интересный факт:</strong> {{ laureate.fact }}</p>
+    {% else %}
+        <h1>Не удалось определить лауреата</h1>
+        <p>По вашим ответам мы не смогли определить, о каком Нобелевском лауреате вы думали.</p>
+    {% endif %}
+    
+    <a href="{% url 'home' %}" class="btn">Играть снова</a>
+{% endblock %}

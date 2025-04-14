@@ -1,0 +1,8 @@
+{% extends "laureates/base.html" %}
+
+{% block content %}
+    <h1>Привет! Меня зовут Нобелевский Акинатор</h1>
+    <p>Ответьте на 4 вопроса, и я угадаю, о каком Нобелевском лауреате вы думаете!</p>
+    
+    <a href="{% url 'question' question_num=1 %}" class="btn">Начать игру</a>
+{% endblock %}
